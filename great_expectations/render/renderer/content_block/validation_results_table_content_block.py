@@ -156,7 +156,7 @@ class ValidationResultsTableContentBlockRenderer(ExpectationStringRenderer):
             sampled_values_set = set()
             for unexpected_value in result.get("partial_unexpected_list"):
                 if unexpected_value:
-                    string_unexpected_value = unexpected_value
+                    string_unexpected_value = str(unexpected_value)
                 elif unexpected_value == "":
                     string_unexpected_value = "EMPTY"
                 else:
