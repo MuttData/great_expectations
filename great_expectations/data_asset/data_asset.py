@@ -917,9 +917,10 @@ class DataAsset(object):
 
                     expectation_method = getattr(self, expectation.expectation_type)
 
+                    """
                     if result_format is not None:
                         expectation.kwargs.update({"result_format": result_format})
-
+                    """
                     # A missing parameter will raise an EvaluationParameterError
                     (
                         evaluation_args,

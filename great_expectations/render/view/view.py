@@ -174,6 +174,11 @@ class DefaultJinjaView(object):
         elif not isinstance(content_block, dict):
             return content_block
         content_block_type = content_block.get("content_block_type")
+        if content_block_type is None:
+            content_block_type = "value_list"
+            content_block = {
+                'value_list': ['\n'.join([f"{k}: {v}" for k,v in content_block.items()])]
+            }
         if render_to_markdown:
             template_filename = f"markdown_{content_block_type}.j2"
         else:
